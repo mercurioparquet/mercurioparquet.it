@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercurio Parquet | Antonio Mercurio</title>
+
+<!-- Font Eleganti da Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #2C2623;
+    background: #FFFFFF;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .nav-logo {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.01em;
+}
+
+/* HEADER ISTITUZIONALE */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid #EAE6DF;
+}
+
+.brand-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+header strong {
+    color: #1E1612;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+header span.tagline {
+    font-size: 11px;
+    color: #C5A059;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1E1612;
+    margin-left: 30px;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #C5A059;
+}
+
+/* MENU A TENDINA */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    text-decoration: none;
+    color: #1E1612;
+    margin-left: 30px;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.dropdown-toggle::after {
+    content: ' ▾';
+    font-size: 10px;
+    margin-left: 4px;
+    color: #C5A059;
+}
+
+.dropdown-toggle:hover, .dropdown:hover .dropdown-toggle {
+    color: #C5A059;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FFFFFF;
+    min-width: 180px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.08);
+    border: 1px solid #EAE6DF;
+    z-index: 1001;
+    padding: 10px 0;
+    margin-top: -5px;
+}
+
+.dropdown-content a {
+    color: #1E1612;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    margin-left: 0;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #FBF9F5;
+    color: #C5A059;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content.show {
+    display: block !important;
+}
+
+/* HERO SECTION */
+.hero{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    background:#1E1612;
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    filter: none; /* Oscuramento rimosso */
+    animation: sliderAnimation 44s infinite ease-in-out;
+}
+
+.hero-slide:nth-child(1) { background-image: url('IMG-20251212-WA0009.jpg'); animation-delay: 0s; }
+.hero-slide:nth-child(2) { background-image: url('AB5.jpeg'); animation-delay: 4s; }
+.hero-slide:nth-child(3) { background-image: url('AB3.jpeg'); animation-delay: 8s; }
+.hero-slide:nth-child(4) { background-image: url('IMG-20251106-WA0011.jpg'); animation-delay: 12s; }
+.hero-slide:nth-child(5) { background-image: url('IMG-20251106-WA0012.jpg'); animation-delay: 16s; }
+.hero-slide:nth-child(6) { background-image: url('IMG-20251106-WA0013.jpg'); animation-delay: 20s; }
+.hero-slide:nth-child(7) { background-image: url('IMG-20251106-WA0014.jpg'); animation-delay: 24s; }
+.hero-slide:nth-child(8) { background-image: url('IMG-20251211-WA0016.jpg'); animation-delay: 28s; }
+.hero-slide:nth-child(9) { background-image: url('IMG-20251124-WA0001.jpg'); animation-delay: 32s; }
+.hero-slide:nth-child(10) { background-image: url('IMG-20251124-WA0002.jpg'); animation-delay: 36s; }
+.hero-slide:nth-child(11) { background-image: url('IMG-20251211-WA0018.jpg'); animation-delay: 40s; }
+
+@keyframes sliderAnimation {
+    0% { opacity: 0; }
+    2.2% { opacity: 1; }
+    9% { opacity: 1; }
+    11.3% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    padding:20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); /* Ombra per mantenere leggibile il testo sulle foto chiare */
+}
+
+.hero h1{
+    font-size: 56px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    line-height: 1.15;
+}
+
+.hero p{
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+}
+
+.btn{
+    display:inline-block;
+    background: rgba(30, 22, 18, 0.6);
+    color:#FFF;
+    border: 1px solid #C5A059;
+    text-decoration:none;
+    padding: 16px 36px;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+}
+
+.btn:hover{
+    background: #C5A059;
+    color: #1E1612;
+}
+
+section{
+    padding: 100px 10%;
+    background: #FFF;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #C5A059;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-title{
+    text-align:center;
+    color:#1E1612;
+    font-size:38px;
+    font-weight: 400;
+    margin-bottom:60px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: #C5A059;
+    margin: 20px auto 0;
+}
+
+.about{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    font-size:19px;
+    color: #555;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+/* SEZIONE SERVIZI */
+.services-container {
+    background: #FBF9F5;
+}
+
+.services-accordion{
+    max-width:900px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.service-item{
+    background:#FFF;
+    border: 1px solid #EAE6DF;
+    transition: all 0.3s ease;
+}
+
+.service-item summary{
+    padding: 24px 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1E1612;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.service-item summary::-webkit-details-marker{
+    display:none;
+}
+
+.service-item summary::after{
+    content: '+';
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #C5A059;
+    transition: transform 0.3s ease;
+}
+
+.service-item[open] summary::after{
+    content: '−';
+}
+
+.service-item[open]{
+    border-color: #C5A059;
+}
+
+.service-content{
+    padding: 0 30px 30px 30px;
+    font-size: 15px;
+    color: #555;
+}
+
+.sub-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* STILE QUADRATO PULSANTE */
+.sub-item-btn {
+    display: block;
+    background: #FBF9F5;
+    border: 1px solid #EAE6DF;
+    padding: 20px 24px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    width: 100%;
+    text-align: left;
+    border-radius: 4px;
+}
+
+.sub-item-btn:hover {
+    background: #FFFFFF;
+    border-color: #C5A059;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+}
+
+.sub-item-btn .btn-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.sub-item-btn .btn-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1E1612;
+}
+
+.sub-item-btn .btn-arrow {
+    font-size: 18px;
+    color: #C5A059;
+    transition: transform 0.3s ease;
+}
+
+.sub-item-btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+.sub-item-btn p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.sub-item {
+    background: #FBF9F5;
+    border: 1px solid #EAE6DF;
+    padding: 12px 20px;
+}
+
+.sub-item summary {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1E1612;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.sub-item summary::after {
+    content: '↓';
+    font-size: 14px;
+    color: #C5A059;
+}
+
+.sub-item[open] summary::after {
+    content: '↑';
+}
+
+.sub-item p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+/* STILE LIGHTBOX / MODAL PER LA FOTO */
+.image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 12, 10, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+}
+
+.image-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content-wrapper {
+    position: relative;
+    max-width: 92%;
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-content-wrapper img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border: 1px solid rgba(197, 160, 89, 0.5);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    border-radius: 4px;
+}
+
+/* FRECCIA E PULSANTE TORNA INDIETRO */
+.modal-back-btn {
+    position: absolute;
+    top: -55px;
+    left: 0;
+    background: rgba(30, 22, 18, 0.9);
+    border: 1px solid #C5A059;
+    color: #FFF;
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.modal-back-btn:hover {
+    background: #C5A059;
+    color: #1E1612;
+}
+
+.modal-close-icon {
+    position: absolute;
+    top: -55px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: #FFF;
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.modal-close-icon:hover {
+    color: #C5A059;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border: 1px solid #EAE6DF;
+}
+
+/* SEZIONE CONTATTI FORMALE */
+.contact-section{
+    background: #1E1612;
+    color: #FFF;
+}
+
+.contact-section .section-title {
+    color: #FFF;
+}
+
+.contact-address{
+    text-align:center;
+    font-size: 16px;
+    margin-bottom: 50px;
+    color: #D5D0C8;
+    font-weight: 300;
+}
+
+.contact-address p{
+    margin-bottom: 8px;
+}
+
+.contact-address strong {
+    color: #C5A059;
+    font-weight: 600;
+}
+
+.contact-buttons{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 20px;
+    border: 1px solid #3A322D;
+    background: #27201C;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #FFF;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover{
+    border-color: #C5A059;
+    background: #C5A059;
+    color: #1E1612;
+}
+
+.contact-info{
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #3A322D;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    font-size: 13px;
+    color: #A0988E;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+footer{
+    background: #140E0A;
+    color: #8A827A;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 13px;
+    border-top: 1px solid #27201C;
+}
+
+footer h3{
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+        gap:15px;
+        padding: 15px 5%;
+    }
+
+    nav a, .dropdown-toggle {
+        margin: 0 8px;
+        font-size: 12px;
+    }
+
+    .dropdown-content {
+        left: 0;
+    }
+
+    .hero h1{
+        font-size: 36px;
+    }
+
+    .hero p{
+        font-size: 16px;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .contact-buttons{
+        grid-template-columns: 1fr;
+    }
+
+    .modal-back-btn span {
+        display: inline;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="brand-wrapper">
+    <strong>Mercurio Parquet</strong>
+    <span class="tagline">Di Antonio Mercurio • Dal 1991</span>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+
+<!-- MENU A TENDINA FORNITURE -->
+<div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle" id="fornitureToggle">Forniture</a>
+    <div class="dropdown-content" id="fornitureMenu">
+        <a href="prefiniti.html">Prefiniti</a>
+        <a href="#servizi">SPC</a>
+        <a href="#servizi">Zoccolini</a>
+    </div>
+</div>
+
+<a href="#servizi">Servizi</a>
+<a href="#galleria">Galleria</a>
+<a href="#contatti">Contatti</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-slider">
+  <div class="hero-slide"></div>
+  <div class="hero-slide"></div>
+  <div class="hero-slide"></div>
+  <div class="hero-slide"></div>
+  <div class="hero-slide"></div>
+  <div class="hero-slide"></div>
+  <div class="hero-slide"></div>
+  <div class="hero-slide"></div>
+  <div class="hero-slide"></div>
+  <div class="hero-slide"></div>
+  <div class="hero-slide"></div>
+</div>
+
+<div class="hero-content">
+  <h1>Pavimentazioni in Legno di Pregio</h1>
+  <p>Posa artigianale, finiture su misura e restauro conservativo per ambienti residenziali e commerciali.</p>
+  <a href="#contatti" class="btn">Richiedi Consulenza</a>
+</div>
+
+</section>
+
+<section>
+
+<div class="section-subtitle">Eccellenza Artigiana</div>
+<h2 class="section-title">Chi Siamo</h2>
+
+<div class="about">
+<p>
+Mercurio Parquet firma interventi di posa e ripristino di pavimentazioni in legno combinando la tradizione della lavorazione artigianale con le più avanzate tecnologie del settore. Oggetto di costante attenzione alla scelta delle materie prime e alla precisione esecutiva, ogni realizzazione rappresenta un'opera unica destinata a durare nel tempo. In qualità di partner dei maggiori produttori di pavimentazioni in legno, offriamo soluzioni personalizzate e di alta qualità.
+</p>
+</div>
+
+</section>
+
+<section id="servizi" class="services-container">
+
+<div class="section-subtitle">Prestazioni Professionali</div>
+<h2 class="section-title">I Nostri Servizi</h2>
+
+<div class="services-accordion">
+
+<details class="service-item" open>
+  <summary>Forniture e Materiali</summary>
+  <div class="service-content">
+    <div class="sub-accordion">
+      
+      <!-- PULSANTE CLASSE A/BA / B -->
+      <a href="javascript:void(0);" class="sub-item-btn" id="openModalBtn">
+        <div class="btn-header">
+          <span class="btn-title">Classe A/BA / B</span>
+          <span class="btn-arrow">→</span>
+        </div>
+        <p>Tavole caratterizzate da tonalità e sfumature cromatiche che variano in modo naturale e delicato.</p>
+      </a>
+
+      <details class="sub-item">
+        <summary>Parquet Masselli</summary>
+        <p>Legno nobile a tutto spessore, posato, levigato e finito in opera. Garanzia di durata e possibilità di plurimi interventi di restauro nel corso del tempo.</p>
+      </details>
+      <details class="sub-item">
+        <summary>Parquet Prefiniti</summary>
+        <p>Listoni multistrato pre-finiti con trattamenti ad elevata resistenza, pronti all'uso subito dopo l'installazione e disponibili in un'ampia varietà di essenze e finiture.</p>
+      </details>
+      <details class="sub-item">
+        <summary>Zoccolini e Battiscopa</summary>
+        <p>Battiscopa coordinati in legno massello o impiallacciato, disponibili in svariate altezze e sagomature per garantire il perfetto raccordo perimetrale.</p>
+      </details>
+      <details class="sub-item">
+        <summary>Decking per Esterni</summary>
+        <p>Soluzioni in legno ed essenze esotiche ad alta densità per terrazzi, bordi piscina e camminamenti esterni con elevate proprietà di resistenza agli agenti atmosferici.</p>
+      </details>
+      <details class="sub-item">
+        <summary>Pavimentazioni SPC e Vinilici</summary>
+        <p>Soluzioni sottili a base minerale ad altissima resistenza, totalmente impermeabili, ideali per ambienti ad elevato calpestio e ristrutturazioni a basso spessore.</p>
+      </details>
+    </div>
+  </div>
+</details>
+
+<details class="service-item">
+  <summary>Posa Specializzata</summary>
+  <div class="service-content">
+    <div class="sub-accordion">
+      <details class="sub-item">
+        <summary>Posa Incollata</summary>
+        <p>Fissaggio diretto su massetto o pavimentazione preesistente mediante adesivi ad alta elasticità, idoneo per l'integrazione con impianti di riscaldamento a pavimento.</p>
+      </details>
+      <details class="sub-item">
+        <summary>Posa Flottante</summary>
+        <p>Installazione su materassino fonoassorbente ad alta stabilità acustica, ottimale per pose rapide e sovrapposizioni su pavimentazioni esistenti senza danneggiamenti.</p>
+      </details>
+      <details class="sub-item">
+        <summary>Pose Tradizionali e Geometrie di Pregio</summary>
+        <p>Esecuzione accurata di pose a Spina di Pesce Italiana, Spina Ungherese e quadri classici per contesti architettonici di alto profilo.</p>
+        <div class="photo-grid">
+          <img src="IMG-20251211-WA0007.jpg" alt="Posa a Spina di Pesce">
+          <img src="IMG-20251211-WA0008.jpg" alt="Posa a Spina di Pesce">
+          <img src="IMG-20251211-WA0009.jpg" alt="Posa a Spina di Pesce">
+          <img src="WhatsApp Image 2026-01-21 at 09.00.22.jpeg" alt="Posa a Spina di Pesce">
+          <img src="WhatsApp Image 2026-01-21 at 09.00.38.jpeg" alt="Posa a Spina di Pesce">
+        </div>
+      </details>
+    </div>
+  </div>
+</details>
+
+<details class="service-item">
+  <summary>Levigatura e Finitura</summary>
+  <div class="service-content">
+    <div class="sub-accordion">
+      <details class="sub-item">
+        <summary>Levigatura Ad Aspirazione Integrata</summary>
+        <p>Carteggiatura professionale condotta con macchinari collegati a sistemi di aspirazione industriale a microfiltro per abbattere la dispersione di polveri negli ambienti.</p>
+      </details>
+      <details class="sub-item">
+        <summary>Trattamenti Protettivi a Vernice o Olio</summary>
+        <p>Applicazione di vernici all'acqua trasparenti ad alta resistenza opache o satinate, oppure trattamenti ad olio naturale impregnante per nutrire la fibra del legno.</p>
+      </details>
+    </div>
+  </div>
+</details>
+
+<details class="service-item">
+  <summary>Restauro e Manutenzione</summary>
+  <div class="service-content">
+    <div class="sub-accordion">
+      <details class="sub-item">
+        <summary>Ripristino Pavimentazioni Storiche</summary>
+        <p>Sostituzione puntuale di tavolette ammalorate, stuccatura con resine e polveri di legno della medesima essenza e pareggiamento cromatico per parquet d'epoca.</p>
+      </details>
+      <details class="sub-item">
+        <summary>Rigenerazione Straordinaria</summary>
+        <p>Interventi di pulizia profonda, de-ceratura e riapplicazione di protettivi per restituire la brillantezza originale a superfici usurate dal tempo.</p>
+      </details>
+    </div>
+  </div>
+</details>
+
+</div>
+
+</section>
+
+<!-- SEZIONE GALLERIA FOTO -->
+<section id="galleria">
+
+<div class="section-subtitle">Portfolio Realizzazioni</div>
+<h2 class="section-title">Galleria Lavori</h2>
+
+<div class="services-accordion">
+
+<details class="service-item">
+  <summary>Parquet Prefiniti</summary>
+  <div class="service-content">
+    <p>Installazioni di parquet prefiniti in varie essenze e formati.</p>
+  </div>
+</details>
+
+<details class="service-item">
+  <summary>Pose a Spina (Italiana e Ungherese)</summary>
+  <div class="service-content">
+    <p>Esempi di pose geometriche realizzate con precisione millimetrica:</p>
+    <div class="photo-grid">
+      <img src="IMG-20251211-WA0007.jpg" alt="Parquet Spina di Pesce">
+      <img src="IMG-20251211-WA0008.jpg" alt="Parquet Spina di Pesce">
+      <img src="IMG-20251211-WA0009.jpg" alt="Parquet Spina di Pesce">
+      <img src="WhatsApp Image 2026-01-21 at 09.00.22.jpeg" alt="Parquet Spina di Pesce">
+      <img src="WhatsApp Image 2026-01-21 at 09.00.38.jpeg" alt="Parquet Spina di Pesce">
+    </div>
+  </div>
+</details>
+
+<details class="service-item">
+  <summary>Sistemi SPC e Vinilici</summary>
+  <div class="service-content">
+    <p>Applicazioni di pavimenti vinilici di ultima generazione.</p>
+  </div>
+</details>
+
+<details class="service-item">
+  <summary>Realizzazioni Esterne e Decking</summary>
+  <div class="service-content">
+    <p>Pavimentazioni per esterni in doghe di legno pregiato.</p>
+  </div>
+</details>
+
+</div>
+
+</section>
+
+<section id="contatti" class="contact-section">
+
+<div class="section-subtitle">Sedi e Riferimenti</div>
+<h2 class="section-title">Contatti</h2>
+
+<div class="contact-address">
+<p><strong>Sede Operativa:</strong> Via Gaetano Mariani 26, Caronno Pertusella (VA)</p>
+<p><strong>Showroom:</strong> Via Monte Cervino 13, Bollate (MI) — <em>Esclusivamente su appuntamento</em></p>
+</div>
+
+<div class="contact-buttons">
+
+<a class="contact-btn" href="tel:+393394355594">Chiamata Diretta</a>
+<a class="contact-btn" href="https://wa.me/393394355594">Messaggio WhatsApp</a>
+<a class="contact-btn" href="mailto:mercurio.parquet@gmail.com">Invia un'Email</a>
+<a class="contact-btn" href="https://maps.google.com/?q=Via+Gaetano+Mariani+26+Caronno+Pertusella" target="_blank">Indicazioni Stradali</a>
+
+</div>
+
+<div class="contact-info">
+<div>Partita IVA: 11928430153</div>
+<div>Codice SDI: M5UXCR1</div>
+</div>
+
+</section>
+
+<footer>
+<h3>Mercurio Parquet</h3>
+<p>Antonio Mercurio • Soluzioni e Pavimentazioni in Legno dal 1991</p>
+</footer>
+
+<!-- MODAL LIGHTBOX FOTO A SCHERMO INTERO -->
+<div class="image-modal" id="imageModal">
+  <div class="modal-content-wrapper">
+    <button class="modal-back-btn" id="closeModalBtn">
+      ← <span>Torna indietro</span>
+    </button>
+    <button class="modal-close-icon" id="closeModalX">&times;</button>
+    <img src="AB.jpeg" alt="Classe A/BA / B - Pavimentazione Parquet"[cite: 2]>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Menu Dropdown
+    var toggle = document.getElementById('fornitureToggle');
+    var menu = document.getElementById('fornitureMenu');
+
+    if (toggle && menu) {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            menu.classList.toggle('show');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown')) {
+                menu.classList.remove('show');
+            }
+        });
+    }
+
+    // Modal Foto
+    var openBtn = document.getElementById('openModalBtn');
+    var modal = document.getElementById('imageModal');
+    var closeBtn = document.getElementById('closeModalBtn');
+    var closeX = document.getElementById('closeModalX');
+
+    function openModal() {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (openBtn && modal) {
+        openBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal();
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+        closeX.addEventListener('click', closeModal);
+
+        // Chiudi cliccando lo sfondo scuro
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Chiudi con il tasto ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>
